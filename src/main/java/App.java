@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        int[] arr = generateArray(20, 10, 70);
+        int[] arr = generateArray(30, 10, 90);
         printArray(arr);
         System.out.format("Sum = %d\n", sumElements(arr));
 
@@ -23,8 +23,7 @@ public class App {
         } else System.out.println("Mảng là mảng không tăng dần.");
 
         // BAI 3A
-        System.out.format("Tổng số chia hết cho 4 nhưng không " +
-                "chia hết cho 5 = %d\n", sumLenght(arr));
+        System.out.format("Có %d số chia hết cho 4 nhưng không chia hết cho 5 \n", sumLenght(arr));
 
         // BAI 3B
         System.out.format("Tổng các số nguyên tố có trong mảng\n", sumPrimeNumber(arr));
