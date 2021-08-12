@@ -112,11 +112,10 @@ public class App {
     }
     public static  int sumLenght(int[] arr) {
         int count1 = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
+        for (int i = 0; i < arr.length - 1; i++)  {
                 if ((i % 4 == 0) &&(i % 5 != 0)) {
                     count1 = count1 + 1;
-                }
+
             }
         }
         return count1;
