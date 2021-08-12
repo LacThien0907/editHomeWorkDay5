@@ -23,17 +23,16 @@ public class App {
         } else System.out.println("Mảng là mảng không tăng dần.");
 
         // BAI 3A
-        System.out.format("Có %d số chia hết cho 4 nhưng không chia hết cho 5 \n", sumLenght(arr));
+        System.out.format("Có %d số chia hết cho 4 nhưng không chia hết cho 5 \n", sumLength(arr));
 
         // BAI 3B
-        System.out.format("Tổng các số nguyên tố có trong mảng\n", sumPrimeNumber(arr));
+        System.out.format("Tổng các số nguyên tố có trong mảng %d\n", sumPrimeNumber(arr));
 
-        sortArrayAsc(arr);
-        printArray(arr);
-        isPrimeNumber(arr);
-        isIncreaseNumber(arr);
-        sumLenght(arr);
-        sumPrimeNumber(arr);
+//        sortArrayAsc(arr);
+//        printArray(arr);
+//        isPrimeNumber(arr);
+//        isIncreaseNumber(arr);
+//        sumPrimeNumber(arr);
     }
 
     public static void printArray(int[] arr) {
@@ -109,7 +108,7 @@ public class App {
         }
         return true;
     }
-    public static  int sumLenght(int[] arr) {
+    public static  int sumLength(int[] arr) { // sai chính tả nè
         int count1 = 0;
         for (int i = 0; i < arr.length - 1; i++)  {
                 if ((i % 4 == 0) &&(i % 5 != 0)) {
@@ -123,18 +122,26 @@ public class App {
     public static int sumPrimeNumber(int[] arr) {
         // so nguyen n < 2 khong phai la so nguyen to
         int sum2 = 0;
+
         for (int n : arr) {
             if (n >= 2) {
             // check so nguyen to khi n >= 2
+            boolean isPrime = true;
+
             int squareRoot = (int) Math.sqrt(n);
             for (int i = 2; i <= squareRoot; i++) {
-                if (n % i != 0) {
-                    sum2 = sum2 + n;
+                if (n % i == 0) {
+
+                    isPrime = false;
+                    break;
                 }
             }
+
+            if (isPrime == true)
+                sum2 = sum2 + n;
             }
         }
-        return sum2;
 
+        return sum2;
     }
 }
